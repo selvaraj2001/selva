@@ -1,0 +1,40 @@
+import java.util.*;
+class Acc
+{
+private double bal;
+private int accNum;
+private String name;
+public Acc(int x,String y,double z)
+{
+ if(z>0.0){
+   bal=z;
+   accNum=x;
+   name=y;
+   }
+}
+public void debit(double x)
+{
+if(x>bal)
+  System.out.println("debit amount exceeds balance");
+else
+  bal=bal-x;
+}
+public void getAccBal()
+{
+System.out.println("Acc no::" +accNum);
+System.out.println("NAME::" +name);
+System.out.println("balance::" +bal);
+} 
+}
+public class AccTest
+{
+public static void main(String[] args)
+{
+Acc a1=new Acc(1234,"selvaraj",5000.00);
+Scanner ip=new Scanner(System.in);
+System.out.println("enter amount to debit...");
+double deb=ip.nextDouble();
+a1.debit(deb);
+a1.getAccBal();
+}
+}
